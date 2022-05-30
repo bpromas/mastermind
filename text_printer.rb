@@ -1,13 +1,17 @@
 # This module is responsible for all possible text in the game
 module TextPrinter
-    def message(prompt)
+    def message(prompt, arg = nil)
         {
             choose_role: "Press 1 if you wish to be CODEBREAKER\nPress 2 if you wish to be CODEMAKER.",
-            role_warning: "Invalid input! Press 1 to be CODEBREAKER or 2 to be CODEMAKER."
+            role_warning: "Invalid input! Press 1 to be CODEBREAKER or 2 to be CODEMAKER.",
+            guess_prompt: "Turn #{arg}, please type a 4-digit guess of digits between 1 and 6.",
+            invalid_guess: "Invalid guess!",
+            congratulations: "Congratulations! You cracked the code!",
+            too_many_turns: "Game over! You took over 12 turns!"
         }[prompt]
     end
 
-    def print_code(array)
+    def colored_code(array)
         code = ""
         array.each do |digit|
             code += "#{digit_color(digit.to_s)}"
@@ -15,7 +19,7 @@ module TextPrinter
         code
     end
 
-    def print_clues(array)
+    def colored_clues(array)
         clues = ""
         array.each do |clue|
             clues += "#{clue_color(clue)}"
