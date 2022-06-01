@@ -1,6 +1,7 @@
 require './instructions'
 require './text_printer'
 require './codebreaker'
+require './codemaker'
 class Game
     include Instructions
     include TextPrinter
@@ -22,7 +23,8 @@ class Game
     end
 
     def codemaker
-
+        maker = Codemaker.new
+        maker.request_code
     end
 
     def mode_selection

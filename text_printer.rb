@@ -5,9 +5,11 @@ module TextPrinter
             choose_role: "Press 1 if you wish to be CODEBREAKER\nPress 2 if you wish to be CODEMAKER.",
             role_warning: "Invalid input! Press 1 to be CODEBREAKER or 2 to be CODEMAKER.",
             guess_prompt: "Turn #{arg}, please type a 4-digit guess of digits between 1 and 6.",
-            invalid_guess: "Invalid guess!",
+            invalid_code: "Invalid code!",
             congratulations: "Congratulations! You cracked the code!",
-            too_many_turns: "Game over! You took over 12 turns!"
+            too_many_turns: "Game over! You took over 12 turns!",
+            choose_code: "Please enter the 4-digit code for the machine to break.",
+            machine_wins: "The machine cracked your code in #{arg} turns."
         }[prompt]
     end
 
